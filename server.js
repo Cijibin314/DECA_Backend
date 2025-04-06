@@ -8,6 +8,10 @@ app.use(cors());
 app.post('/api/validateUser', function(req, res) {
 
 })
+app.get('/api/periodic', function(req, res) {
+  res.status(200)
+  res.send("Success");
+})
 
 app.get('/api/calendar', async function(req, res) {
   try{
