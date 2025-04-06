@@ -14,7 +14,7 @@ let connected = false;
 let db;
 async function connect() {
   try {
-    //await client.connect();
+    await client.connect();
     connected = true;
     console.log("Successfully connected to MongoDB!");
     db = client.db("DECA_Database")
