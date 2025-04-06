@@ -3,9 +3,7 @@ const cors = require('cors');
 const Calendar = require('./google/calendar')
 const app = express();
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5501/frontend/'
-}));
+app.use(cors());
 
 app.post('/api/validateUser', function(req, res) {
 
