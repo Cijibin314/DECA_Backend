@@ -13,7 +13,7 @@ async function addUser(username, password){
 async function isValidUser(username, password){
     await getConnection();
     const result = await connection.findOne({"username": username, "password": password})
-    return result != null;
+    return result!=null;
 }
 async function removeUser(username, password){
     await getConnection();

@@ -8,9 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.post('/api/validateUser', function(req, res) {
+app.post('/api/validateUser', async function(req, res) {
   try{
-    if(isValidUser(req.body.username, req.body.password)){
+    if(await isValidUser(req.body.username, req.body.password)){
       res.status(200).send(JSON.stringify({"valid": true}));
     }else{
       res.status(200).send(JSON.stringify({"valid": false}));
