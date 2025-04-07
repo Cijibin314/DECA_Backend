@@ -6,9 +6,9 @@ const {isValidUser, removeUser, addUser} = require('./database/users.js');
 const app = express();
 
 app.use(cors());
+app.use(express.json())
 
 app.post('/api/validateUser', function(req, res) {
-  console.log("req: " + req.body.username)
   try{
     if(isValidUser(req.body.username, req.body.password)){
       res.status(200).send(JSON.stringify({"valid": true}));
