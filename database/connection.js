@@ -8,13 +8,17 @@ const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
+  tls: true
 });
 let connected = false;
 let db;
 async function connect() {
   try {
     await client.connect();
+    client.on('serverOpening', (event) => {
+      console.log("MongoDB server opening:", event);
+    });
     connected = true;
     console.log("Successfully connected to MongoDB!");
     db = client.db("DECA_Database")
