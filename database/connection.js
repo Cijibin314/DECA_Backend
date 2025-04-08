@@ -15,10 +15,8 @@ let connected = false;
 let db;
 async function connect() {
   try {
+    console.log("Connecting to MongoDB...")
     await client.connect();
-    client.on('serverOpening', (event) => {
-      console.log("MongoDB server opening:", event);
-    });
     connected = true;
     console.log("Successfully connected to MongoDB!");
     db = client.db("DECA_Database")
