@@ -26,6 +26,7 @@ async function connect() {
     console.log("Error connecting: " + e)
   }
 }
+connect()
 
 function getDb(){
     if(!connected){
