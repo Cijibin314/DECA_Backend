@@ -26,7 +26,7 @@ async function connect() {
 }
 connect()
 
-function getDb(){
+async function getDb(){
     if(!connected){
         return connect().then(()=>{
             return getDb();
